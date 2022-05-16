@@ -1,0 +1,8 @@
+pyodbc
+apscheduler
+fastapi
+uvicorn
+python-dotenv
+pytelegrambotapi
+sqlalchemy
+

@@ -8,14 +8,13 @@ from logger.telegram import send_message
 yandex_direct_agent = YandexDirectConn()
 
 
-def ct_run():
+def yandex_direct_run():
     yandex_direct_agent.run()
     send_message('yandex_direct_agent done ')
 
 
 scheduler = BackgroundScheduler({'apscheduler.timezone': 'Europe/Moscow'})
 scheduler.start()
-scheduler.add_job(ct_run, 'cron', hour='01', minute='40')
+scheduler.add_job(yandex_direct_run, 'cron', hour='01', minute='40')
 
 
-# date -s "03 MAY 2022 02:10:00"

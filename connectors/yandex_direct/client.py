@@ -70,6 +70,7 @@ class YandexDirectConn:
         }
         body = json.dumps(body, indent=4)
         response = requests.post(self.url, body, headers=self.headers)
+        print(response)
         return response
 
     @staticmethod
@@ -93,7 +94,7 @@ class YandexDirectConn:
         data = []
 
         self.get_data(date)
-        sleep(65)
+        sleep(120)
         result = self.get_data(date).text.split()
 
         i = 0
@@ -102,6 +103,7 @@ class YandexDirectConn:
             item = result[i: k]
             data.append(item)
             i += 5
+        print(data)
         self.create_item(data)
 
 
